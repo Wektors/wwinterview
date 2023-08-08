@@ -1,9 +1,9 @@
 <template>
     <div id="app">
         <div class="header">
-            <button>{{ buttonName }}</button>
+            <button v-on:click="toggleWorkersList()">{{ buttonName }}</button>
         </div>
-        <workers-list :workers-list="workers"/>
+        <workers-list :workers-list="workers" v-if="buttonClicked"/>
     </div>
 </template>
 
@@ -23,7 +23,21 @@ export default class App extends Vue {
         return {
             workers: [],
             buttonName: 'Kliknij mnie',
+            buttonClicked: false,
         };
+    }
+
+    toggleWorkersList(){
+    this.buttonClicked = !this.buttonClicked;
+
+        //tutaj nie jestem pewny czy od razu ma to być zmienione, zrobiłem żeby zmieniało się po kliknięciu
+        if (this.buttonClicked) {
+            this.buttonName = 'Ukryj listę pracowników'
+        }
+
+        else {
+            this.buttonName = 'Pokaż listę pracowników'
+        }
     }
 
     mounted(){
@@ -38,7 +52,7 @@ export default class App extends Vue {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss" scoped >
 @import "./assets/global.css";
 
 #app {

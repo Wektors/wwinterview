@@ -9,6 +9,8 @@
   "dependencies": {
     "axios": "^0.25.0",
     "core-js": "^3.6.5",
+    "node": "^20.5.0",
+    "sass": "^1.64.2",
     "vue": "^2.6.11",
     "vue-class-component": "^7.2.6",
     "vue-property-decorator": "^8.2.1"
@@ -16,10 +18,10 @@
   "devDependencies": {
     "@babel/plugin-proposal-class-properties": "^7.16.7",
     "@babel/plugin-proposal-decorators": "^7.17.2",
-    "@vue/cli-plugin-babel": "~4.5.0",
-    "@vue/cli-service": "~4.5.0",
-    "jsdoc": "^3.6.10",
-    "node-sass": "^6.0.1",
+    "@vue/cli-plugin-babel": "^5.0.8",
+    "@vue/cli-service": "^5.0.8",
+    "jsdoc": "^4.0.2",
+    "node-sass": "^9.0.0",
     "sass-loader": "^10.2.0",
     "vue-template-compiler": "^2.6.11"
   }
