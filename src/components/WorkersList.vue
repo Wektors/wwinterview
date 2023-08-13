@@ -6,7 +6,8 @@
 				<th>Wiek</th>
 				<th>Pensja</th>
 			</tr>
-			<tr v-for="item in this.workersList">
+			<tr v-for="item in this.workersList" 
+			:style="{backgroundColor: changeColor(item, getMinAge(workersList), getMaxAge(workersList))}">
 				<td>
 					{{ item["_firstName"] }}
 					{{ " " }}
@@ -50,12 +51,23 @@ export default class WorkersList extends Vue {
     getMaxAge() {
         return Math.max(...this.workersList.map(item => item["_age"]));
     }
+
+	changeColor(worker, minAge, maxAge) {
+		if (worker["_age"] == minAge) {
+			return "green"
+		}
+		if (worker["_age"] == maxAge) {
+			return "yellow"
+		}
+		
+	};
 }
 </script>
 
 <style lang="scss" scoped>
 .workers-list {
 	padding: 0.5rem;
+	
 }
 td {
 	padding-left: 1rem;
